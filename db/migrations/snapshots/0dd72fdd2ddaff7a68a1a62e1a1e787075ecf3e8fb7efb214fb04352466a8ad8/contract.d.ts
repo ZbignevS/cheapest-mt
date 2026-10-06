@@ -34,7 +34,7 @@ import type {
 } from '@prisma/orm-postgres/contract/types';
 
 export type StorageHash =
-  StorageHashBase<'7179c2eca736a98e0634fc6db3b6419a27f34dd4a8e3f07eda0b5b68219f564a'>;
+  StorageHashBase<'0dd72fdd2ddaff7a68a1a62e1a1e787075ecf3e8fb7efb214fb04352466a8ad8'>;
 export type ExecutionHash =
   ExecutionHashBase<'c8e61972815d792dff83b4e051d0661e990b1a7797d7b9fc1ee829d69363590c'>;
 export type ProfileHash =
@@ -260,7 +260,6 @@ export type FieldOutputTypes = {
       readonly storeId: Char<36>;
     };
     readonly Product: {
-      readonly brand: CodecTypes['pg/text@1']['output'] | null;
       readonly dateAdded: CodecTypes['pg/timestamptz-string@1']['output'];
       readonly description: CodecTypes['pg/text@1']['output'] | null;
       readonly id: Char<36>;
@@ -287,7 +286,6 @@ export type FieldInputTypes = {
       readonly storeId: CodecTypes['sql/char@1']['input'];
     };
     readonly Product: {
-      readonly brand: CodecTypes['pg/text@1']['input'] | null;
       readonly dateAdded: CodecTypes['pg/timestamptz-string@1']['input'];
       readonly description: CodecTypes['pg/text@1']['input'] | null;
       readonly id: CodecTypes['sql/char@1']['input'];
@@ -314,7 +312,6 @@ export type StorageColumnTypes = {
       readonly storeId: Char<36>;
     };
     readonly Product: {
-      readonly brand: CodecTypes['pg/text@1']['output'] | null;
       readonly dateAdded: CodecTypes['pg/timestamptz-string@1']['output'];
       readonly description: CodecTypes['pg/text@1']['output'] | null;
       readonly id: Char<36>;
@@ -341,7 +338,6 @@ export type StorageColumnInputTypes = {
       readonly storeId: CodecTypes['sql/char@1']['input'];
     };
     readonly Product: {
-      readonly brand: CodecTypes['pg/text@1']['input'] | null;
       readonly dateAdded: CodecTypes['pg/timestamptz-string@1']['input'];
       readonly description: CodecTypes['pg/text@1']['input'] | null;
       readonly id: CodecTypes['sql/char@1']['input'];
@@ -371,7 +367,6 @@ export namespace Models {
     readonly [RelationKeys]?: 'product' | 'store';
   };
   export type public_Product = {
-    brand: CodecTypes['pg/text@1']['output'] | null;
     dateAdded: CodecTypes['pg/timestamptz-string@1']['output'];
     description: CodecTypes['pg/text@1']['output'] | null;
     id: Char<36>;
@@ -464,11 +459,6 @@ type ContractBase = Omit<
             };
             readonly Product: {
               columns: {
-                readonly brand: {
-                  readonly nativeType: 'text';
-                  readonly codecId: 'pg/text@1';
-                  readonly nullable: true;
-                };
                 readonly dateAdded: {
                   readonly nativeType: 'timestamptz';
                   readonly codecId: 'pg/timestamptz-string@1';
@@ -640,10 +630,6 @@ type ContractBase = Omit<
           };
           readonly Product: {
             readonly fields: {
-              readonly brand: {
-                readonly nullable: true;
-                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
-              };
               readonly dateAdded: {
                 readonly nullable: false;
                 readonly type: {
@@ -692,7 +678,6 @@ type ContractBase = Omit<
               readonly table: 'Product';
               readonly namespaceId: 'public';
               readonly fields: {
-                readonly brand: { readonly column: 'brand' };
                 readonly dateAdded: { readonly column: 'dateAdded' };
                 readonly description: { readonly column: 'description' };
                 readonly id: { readonly column: 'id' };

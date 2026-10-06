@@ -16,7 +16,7 @@
     "outDir": "dist",
     "types": [
       "node"
-    ]
+    ],
   },
   "include": ["src/**/*.ts"]
 }

@@ -1,0 +1,17 @@
+From here, when you change your schema, the Prisma 8 workflow is essentially:
+
+npx prisma contract emit
+npx prisma migration plan --name <change-name>
+npx prisma db migrate --advance-ref db
+
+For example, if you add brand to Product:
+
+npx prisma contract emit
+npx prisma migration plan --name add_product_brand
+npx prisma db migrate --advance-ref db
+
+Then check:
+
+npx prisma migration status
+
+You should see the new migration in the graph and ✔ Up to date.
