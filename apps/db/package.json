@@ -1,5 +1,5 @@
 {
-  "name": "cheapest-mt",
+  "name": "@cheapest-mt/db",
   "private": true,
   "packageManager": "npm@11.6.0",
   "type": "module",

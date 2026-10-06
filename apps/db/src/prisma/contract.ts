@@ -31,7 +31,9 @@ export const contract = defineContract({}, ({ field, model, rel }) => {
       isActive: field.boolean(),
       lastSeenAt: field.temporal.updatedAtString(),
     },
-  });
+  }).attributes(({ fields, constraints }) => ({
+    uniques: [constraints.unique([fields.productId, fields.storeId])],
+  }));
 
   return {
     models: {

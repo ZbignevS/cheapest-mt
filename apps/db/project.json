@@ -1,0 +1,36 @@
+{
+  "name": "db",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/db/src",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run build",
+        "cwd": "apps/db"
+      }
+    },
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run dev",
+        "cwd": "apps/db"
+      }
+    },
+    "migrate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run migrate",
+        "cwd": "apps/db"
+      }
+    },
+    "migration:status": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run migration:status",
+        "cwd": "apps/db"
+      }
+    }
+  }
+}

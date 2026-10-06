@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "strict": false,
-    "paths": {},
+    "paths": {
+      "@cheapest-mt/db": ["apps/db/src/index.ts"],
+      "@cheapest-mt/database": ["./database/src/index.ts"]
+    },
     "types": ["node"]
   },
   "exclude": ["node_modules", "tmp"]
