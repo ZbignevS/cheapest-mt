@@ -11,12 +11,12 @@
     "target": "es2015",
     "module": "esnext",
     "lib": ["es2020", "dom"],
+    "resolveJsonModule": true,
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "strict": false,
     "paths": {
-      "@cheapest-mt/db": ["apps/db/src/index.ts"],
-      "@cheapest-mt/database": ["./database/src/index.ts"]
+      "@cheapest-mt/db": ["./apps/db/src/index.ts"]
     },
     "types": ["node"]
   },

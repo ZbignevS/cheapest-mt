@@ -1,8 +1,9 @@
 {
   "name": "db",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "projectType": "application",
+  "projectType": "library",
   "sourceRoot": "apps/db/src",
+  "tags": ["type:data", "scope:db"],
   "targets": {
     "build": {
       "executor": "nx:run-commands",
@@ -15,6 +16,20 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "npm run dev",
+        "cwd": "apps/db"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx tsc -p tsconfig.json --noEmit",
+        "cwd": "apps/db"
+      }
+    },
+    "contract-emit": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run contract:emit",
         "cwd": "apps/db"
       }
     },
